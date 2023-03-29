@@ -4,7 +4,7 @@ export default function Card(props) {
   return (
     <View style={styles.card}>
         <Image style={styles.imagem} source={{ uri: props.filme.imgfilme}} />  
-        <Text style={{ color: 'darkred'}}> {props.filme.categoria} </Text>
+        <Text style={{ color: 'darkred'}}> {props.filme.genero} </Text>
     </View>
   );
 }
