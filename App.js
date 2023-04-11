@@ -3,7 +3,7 @@ import Card from "./src/components/Card";
 import React from "react";
 
 export default function App() {
-  const filmes = [
+  const [filmes, setFilmes] = React.useState([
     {
       id: 1,
       imgfilme:
@@ -40,7 +40,7 @@ export default function App() {
       genero: "Aventura",
     },
    
-  ];
+  ]);
 
   const removerItem = (id) => {
     const index = filmes.findIndex((filme) => filme.id === id);
@@ -55,7 +55,10 @@ export default function App() {
         <Text style={{ fontSize: 25, color: "white" }}>5 filmes online</Text>
         <View style={styles.main}>
           {filmes.map((filmes) => (
-            <Card filme={filmes} key={filmes.id} />
+            <Card 
+            filme={filmes} 
+            removerItem={() => removerItem(filmes.id)} 
+            key={filmes.id} />
           ))}
         </View>
       </View>
